@@ -17,8 +17,8 @@ public class YellCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player) || args.length == 0) return false;
         Player player = (Player) sender;
-        String msg = String.join(" ", args);
-        String message = ChatColor.RED + player.getName() + " yells: " + msg;
+        String msg = String.join(" ", args).toUpperCase();
+        String message = ChatColor.DARK_PURPLE + "[RP] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RED + " yells: " + msg;
 
         for (Player p : Bukkit.getOnlinePlayers()) {
             if (p.getWorld().equals(player.getWorld()) && p.getLocation().distance(player.getLocation()) <= 50) {

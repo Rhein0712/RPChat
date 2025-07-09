@@ -18,7 +18,7 @@ public class WhisperCommand implements CommandExecutor {
         if (!(sender instanceof Player) || args.length == 0) return false;
         Player player = (Player) sender;
         String msg = String.join(" ", args);
-        String message = ChatColor.DARK_GRAY + player.getName() + " whispers: " + msg;
+        String message = ChatColor.DARK_PURPLE + "[RP] " + ChatColor.RESET + player.getDisplayName() + ChatColor.GRAY + ChatColor.ITALIC + " whispers: " + msg;
 
         for (Player p : Bukkit.getOnlinePlayers()) {
             if (p.getWorld().equals(player.getWorld()) && p.getLocation().distance(player.getLocation()) <= 5) {

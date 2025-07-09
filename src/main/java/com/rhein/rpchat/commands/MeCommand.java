@@ -15,7 +15,7 @@ public class MeCommand implements CommandExecutor {
 
         Player player = (Player) sender;
         String action = String.join(" ", args);
-        String message = ChatColor.LIGHT_PURPLE + "* " + player.getName() + " " + action;
+        String message = ChatColor.LIGHT_PURPLE + "* " + player.getDisplayName() + " " + action;
 
         // Broadcast to all players for now (we'll do local chat next)
         Bukkit.getServer().broadcastMessage(message);

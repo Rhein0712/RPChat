@@ -20,7 +20,7 @@ public class RPListener implements Listener {
         if (!manager.isInRP(sender.getUniqueId())) return;
 
         event.setCancelled(true);
-        String message = ChatColor.YELLOW + sender.getName() + ": " + event.getMessage();
+        String message = ChatColor.DARK_PURPLE + "[RP] " + ChatColor.YELLOW + sender.getDisplayName() + ": " + event.getMessage();
 
         for (Player p : sender.getWorld().getPlayers()) {
             if (p.getLocation().distance(sender.getLocation()) <= 15) {

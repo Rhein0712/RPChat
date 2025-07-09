@@ -10,7 +10,7 @@ public class RPChat extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        getLogger().info("RPChat enabled.");
+        getLogger().info("RPChat mode enabled.");
 
         manager = new ChatModeManager();
 
@@ -24,6 +24,6 @@ public class RPChat extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        getLogger().info("RPChat disabled.");
+        getLogger().info("RPChat mode disabled.");
     }
 }
