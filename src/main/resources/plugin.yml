@@ -9,7 +9,11 @@ commands:
   me:
     description: Roleplay action
   whisper:
-    description: Whisper to nearby player
+    description: Whisper IRP to nearby players
+  yell:
+    description: Yell IRP to a larger area
+  rp:
+    description: Toggle RP mode
 
 permissions:
   rpchat.staff:

@@ -1,4 +1,4 @@
-package com.rhein.rpchat;
+package com.rhein.rpchat.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

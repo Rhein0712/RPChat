@@ -1,19 +1,25 @@
 package com.rhein.rpchat;
 
+import com.rhein.rpchat.commands.*;
+import com.rhein.rpchat.listeners.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.rhein.rpchat.MeCommand;
-
-import com.rhein.rpchat.WhisperCommand;
-
 public class RPChat extends JavaPlugin {
+
+    private ChatModeManager manager;
 
     @Override
     public void onEnable() {
         getLogger().info("RPChat enabled.");
+
+        manager = new ChatModeManager();
+
         getCommand("me").setExecutor(new MeCommand());
-        getCommand("whisper").setExecutor(new WhisperCommand());
-        // We'll register commands and events here later
+        getCommand("whisper").setExecutor(new WhisperCommand(manager));
+        getCommand("yell").setExecutor(new YellCommand(manager));
+        getCommand("rp").setExecutor(new RPCommand(manager));
+
+        getServer().getPluginManager().registerEvents(new RPListener(manager), this);
     }
 
     @Override
