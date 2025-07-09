@@ -3,6 +3,8 @@ version: 1.0
 main: com.rhein.rpchat.RPChat
 api-version: 1.20
 
+softdepend: [Essentials]
+
 commands:
   me:
     description: Roleplay action
