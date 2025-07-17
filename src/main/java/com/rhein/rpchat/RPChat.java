@@ -2,6 +2,7 @@ package com.rhein.rpchat;
 
 import com.rhein.rpchat.commands.*;
 import com.rhein.rpchat.listeners.*;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class RPChat extends JavaPlugin {
@@ -18,6 +19,8 @@ public class RPChat extends JavaPlugin {
         getCommand("whisper").setExecutor(new WhisperCommand(manager));
         getCommand("yell").setExecutor(new YellCommand(manager));
         getCommand("rp").setExecutor(new RPCommand(manager));
+        getCommand("ooc").setExecutor(new OOCCommand(manager));
+        getCommand("looc").setExecutor(new LOOCCommand());
 
         getServer().getPluginManager().registerEvents(new RPListener(manager), this);
     }

@@ -6,14 +6,18 @@ api-version: 1.20
 softdepend: [Essentials]
 
 commands:
-  me:
-    description: Roleplay action
-  whisper:
-    description: Whisper IRP to nearby players
-  yell:
-    description: Yell IRP to a larger area
   rp:
-    description: Toggle RP mode
+    description: Switch to RP chat mode
+  ooc:
+    description: Switch to OOC chat mode
+  whisper:
+    description: Whisper to nearby players
+  yell:
+    description: Yell to farther players
+  looc:
+    description: Send a local OOC message
+  me:
+    description: Send an emote
 
 permissions:
   rpchat.staff:

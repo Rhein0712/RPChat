@@ -1,6 +1,6 @@
 package com.rhein.rpchat.commands;
 
-import com.rhein.rpchat.listeners.ChatModeManager;
+import com.rhein.rpchat.ChatModeManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

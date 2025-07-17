@@ -1,5 +1,6 @@
 package com.rhein.rpchat.listeners;
 
+import com.rhein.rpchat.ChatModeManager;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.*;

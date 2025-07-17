@@ -1,4 +1,4 @@
-package com.rhein.rpchat.listeners;
+package com.rhein.rpchat;
 
 import java.util.HashSet;
 import java.util.Set;
