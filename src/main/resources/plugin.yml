@@ -18,6 +18,12 @@ commands:
     description: Send a local OOC message
   me:
     description: Send an emote
+  staff:
+    description: Enter staff chat mode
+  staffadd:
+    description: Give someone staff chat access
+  staffremove:
+    description: Remove staff chat access
 
 permissions:
   rpchat.staff:
