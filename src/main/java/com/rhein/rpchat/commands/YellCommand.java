@@ -15,8 +15,13 @@ public class YellCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!(sender instanceof Player) || args.length == 0) return false;
+        if (!(sender instanceof Player)) return false;
         Player player = (Player) sender;
+        if (args.length == 0) {
+            player.sendMessage(ChatColor.RED + "Usage: /yell <message>");
+            return true;
+        }
+
         String msg = String.join(" ", args).toUpperCase();
         String message = ChatColor.DARK_PURPLE + "[RP] " + ChatColor.RESET + player.getDisplayName() + ChatColor.RED + " yells: " + msg;
 

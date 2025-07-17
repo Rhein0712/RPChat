@@ -3,6 +3,7 @@ package com.rhein.rpchat;
 import com.rhein.rpchat.commands.*;
 import com.rhein.rpchat.listeners.*;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class RPChat extends JavaPlugin {
@@ -23,6 +24,7 @@ public class RPChat extends JavaPlugin {
         getCommand("looc").setExecutor(new LOOCCommand());
 
         getServer().getPluginManager().registerEvents(new RPListener(manager), this);
+        // getServer().getPluginManager().registerEvents(new OOCListener(manager), this);
     }
 
     @Override
