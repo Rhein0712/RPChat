@@ -1,9 +1,20 @@
+package com.rhein.rpchat.commands;
+
+import com.rhein.rpchat.ChatModeManager;
+import com.rhein.rpchat.RPChat;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.*;
+import org.bukkit.entity.Player;
+
 public class StaffRemoveCommand implements CommandExecutor {
 
     private final ChatModeManager manager;
+    private final RPChat plugin;
 
-    public StaffRemoveCommand(ChatModeManager manager) {
+    public StaffRemoveCommand(ChatModeManager manager, RPChat plugin) {
         this.manager = manager;
+        this.plugin = plugin;
     }
 
     @Override
@@ -25,7 +36,8 @@ public class StaffRemoveCommand implements CommandExecutor {
         }
 
         manager.removeStaffAccess(target.getUniqueId());
-        manager.exitStaff(target.getUniqueId());
+        manager.disableStaff(target.getUniqueId());
+        plugin.saveStaffAccess(); // save to file
         sender.sendMessage(ChatColor.GREEN + "Removed " + target.getName() + " from staff chat.");
         return true;
     }

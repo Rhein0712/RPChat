@@ -53,4 +53,8 @@ public class ChatModeManager {
     public boolean hasStaffAccess(UUID playerId) {
         return staffAccessPlayers.contains(playerId);
     }
+
+    public Set<UUID> getStaffAccessUUIDs() {
+        return new HashSet<>(staffAccessPlayers);
+    }
 }

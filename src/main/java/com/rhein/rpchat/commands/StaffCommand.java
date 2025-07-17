@@ -1,5 +1,6 @@
 package com.rhein.rpchat.commands;
 
+import java.util.UUID;
 import com.rhein.rpchat.ChatModeManager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.*;
@@ -25,8 +26,8 @@ public class StaffCommand implements CommandExecutor {
             return true;
         }
 
-        manager.enterStaff(uuid);
-        manager.exitRP(uuid);
+        manager.enableStaff(uuid);
+        manager.disableRP(uuid);
         player.sendMessage(ChatColor.GREEN + "Entered Staff Chat.");
         return true;
     }

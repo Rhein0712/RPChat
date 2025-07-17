@@ -1,6 +1,7 @@
 package com.rhein.rpchat.commands;
 
 import com.rhein.rpchat.ChatModeManager;
+import com.rhein.rpchat.RPChat;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.*;
@@ -9,9 +10,11 @@ import org.bukkit.entity.Player;
 public class StaffAddCommand implements CommandExecutor {
 
     private final ChatModeManager manager;
+    private final RPChat plugin;
 
-    public StaffAddCommand(ChatModeManager manager) {
+    public StaffAddCommand(ChatModeManager manager, RPChat plugin) {
         this.manager = manager;
+        this.plugin = plugin;
     }
 
     @Override
@@ -33,6 +36,7 @@ public class StaffAddCommand implements CommandExecutor {
         }
 
         manager.addStaffAccess(target.getUniqueId());
+        plugin.saveStaffAccess(); // save to file
         sender.sendMessage(ChatColor.GREEN + "Added " + target.getName() + " to staff chat.");
         return true;
     }
