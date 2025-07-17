@@ -3,6 +3,8 @@ package com.rhein.rpchat;
 import com.rhein.rpchat.commands.*;
 import com.rhein.rpchat.listeners.*;
 
+import com.rhein.rpchat.listeners.StaffListener;
+
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -37,6 +39,8 @@ public class RPChat extends JavaPlugin {
         getCommand("staff").setExecutor(new StaffCommand(manager));
         getCommand("staffadd").setExecutor(new StaffAddCommand(manager, this));
         getCommand("staffremove").setExecutor(new StaffRemoveCommand(manager, this));
+        getCommand("stafflist").setExecutor(new StaffListCommand(manager));
+        getCommand("rpchathelp").setExecutor(new RPChatHelpCommand());
 
         getServer().getPluginManager().registerEvents(new RPListener(manager), this);
         getServer().getPluginManager().registerEvents(new StaffListener(manager), this);

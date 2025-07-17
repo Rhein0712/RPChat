@@ -24,6 +24,12 @@ commands:
     description: Give someone staff chat access
   staffremove:
     description: Remove staff chat access
+  stafflist:
+    description: List all players who can see staff chat
+  rpchathelp:
+    description: List all RPChat commands and what they do
+    usage: /rpchathelp
+    aliases: [rphelp, rch]
 
 permissions:
   rpchat.staff:

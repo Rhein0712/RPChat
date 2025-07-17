@@ -26,9 +26,15 @@ public class StaffCommand implements CommandExecutor {
             return true;
         }
 
-        manager.enableStaff(uuid);
-        manager.disableRP(uuid);
-        player.sendMessage(ChatColor.GREEN + "Entered Staff Chat.");
+        if (manager.isInStaff(uuid)) {
+            manager.disableStaff(uuid);
+            player.sendMessage(ChatColor.GRAY + "Staff Chat disabled.");
+        } else {
+            manager.enableStaff(uuid);
+            manager.disableRP(uuid); // exit RP if active
+            player.sendMessage(ChatColor.GREEN + "Staff Chat enabled.");
+        }
+
         return true;
     }
 }
