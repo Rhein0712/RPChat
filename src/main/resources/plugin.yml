@@ -19,7 +19,7 @@ commands:
   me:
     description: Send an emote
   staff:
-    description: Enter staff chat mode
+    description: Toggle staff chat mode
   staffadd:
     description: Give someone staff chat access
   staffremove:
